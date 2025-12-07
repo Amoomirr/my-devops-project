@@ -16,5 +16,6 @@ spec:
         - name: order-service
           image: amoomirr/order-service:latest
           ports:
-            - containerPort: 3002
+            - containerPort: 3003
+
 
