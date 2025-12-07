@@ -16,4 +16,4 @@ spec:
         - name: cart-service
           image: amoomirr/cart-service:latest
           ports:
-            - containerPort: 3003
+            - containerPort: 3002
