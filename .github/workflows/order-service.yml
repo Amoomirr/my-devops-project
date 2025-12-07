@@ -53,7 +53,7 @@ jobs:
 
         - name: Update tag in kubernetes deployment manifest
           run: | 
-               sed -i "s|image: .*|image: ${{ secrets.DOCKER_USERNAME }}/order-service:${{github.run_id}}|"Kubernetes/order-service/deploy.yml
+               sed -i "s|image: .*|image: ${{ secrets.DOCKER_USERNAME }}/order-service:${{github.run_id}}|" Kubernetes/order-service/deploy.yml
         
         - name: Commit and push changes
           run: |
