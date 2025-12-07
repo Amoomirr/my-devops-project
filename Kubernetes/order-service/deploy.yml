@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: order-service
-          image: amoomirr/order-service:20001950826
+          image: amoomirr/order-service:20001962841
           ports:
             - containerPort: 3002
