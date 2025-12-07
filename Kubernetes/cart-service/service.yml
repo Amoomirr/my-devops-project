@@ -1,0 +1,13 @@
+kind: Service 
+apiVersion: v1
+metadata: 
+  name: cart-service-svc
+spec:
+  selector:
+    app: cart-service 
+  ports: 
+   -  port: 3003
+      targetPort: 3003
+  type: ClusterIP
+
+  
