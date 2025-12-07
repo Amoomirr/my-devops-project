@@ -37,7 +37,7 @@ jobs:
             context: order-service
             file: order-service/Dockerfile
             push: true
-            tags: ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{github.run_id}}
+            tags: ${{ secrets.DOCKER_USERNAME }}/order-service:${{github.run_id}}
 
 
     updatek8s:
@@ -53,12 +53,12 @@ jobs:
 
         - name: Update tag in kubernetes deployment manifest
           run: | 
-               sed -i "s|image: .*|image: ${{ secrets.DOCKER_USERNAME }}/order-service:${{github.run_id}}|" Kubernetes/order-service/deploy.yaml
+               sed -i "s|image: .*|image: ${{ secrets.DOCKER_USERNAME }}/order-service:${{github.run_id}}|"Kubernetes/order-service/deploy.yml
         
         - name: Commit and push changes
           run: |
             git config --global user.email "amirmohammed15@gmail.com"
             git config --global user.name "Amoomirr"
-            git add Kubernetes/order-service/deploy.yaml
+            git add Kubernetes/order-service/deploy.yml
             git commit -m "[CI]: Update order service image tag"
             git push origin HEAD:main -f
